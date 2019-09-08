@@ -1,4 +1,7 @@
 #!/bin/bash
 
-echo Hello, World!
+echo Who are you?
 
+read who
+
+echo Hello, $who!
