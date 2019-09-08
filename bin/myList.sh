@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo Who are you?
+# create an array with all the filer/dir inside ~/myDir
+arr=(~/*)
 
-read who
-
-echo Hello, $who!
+for f in "${arr[@]}"; do
+   echo "$f"
+done
