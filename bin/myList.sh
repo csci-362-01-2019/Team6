@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# create an array with all the filer/dir inside ~/myDir
-arr=$(ls -a)
+# create a file to write to
+# DIRECTORY_FILE="directory.html"
 
-for f in "${arr[@]}"; do
-   echo "$f"
+# create an array with all the filer/dir inside ~/myDir
+arr=$( ls )
+
+# iterate through the array to cycle through files
+for ((i=0; i<${#arr[@]}; i++)); do
+    echo "${arr[$i]}" # > DIRECTORY_FILE
 done
