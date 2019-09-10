@@ -2,7 +2,7 @@
 
 # create a file to write to
 filename="toplevel.html"
-
+filepwd="file://`pwd`/${filename}"
 {
 echo "<!DOCTYPE html>" 
 echo "<html>" 
@@ -23,3 +23,6 @@ echo "</p>"
 echo "</body>"
 echo "</html>"
 } > "${filename}" 
+
+echo "Now opening in default browser: $filepwd"
+xdg-open $filepwd 
