@@ -12,7 +12,7 @@
 #Outputs=""
 
 # create array of test file names
-testfiles=$( ls ) # this is a temporary test; I've also tried "~/*"
+testfiles=$( ls * ) # this is a temporary test; I've also tried "~/*"
 
 # loop through test files
 for i in "${testfiles[@]}" do # for some reason, this loop is failing to work
