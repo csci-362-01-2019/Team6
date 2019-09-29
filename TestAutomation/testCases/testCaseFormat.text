@@ -1,0 +1,13 @@
+Test ID: Test
+Requirement: To Do Something
+Component: Test Component (ie Drug Dispenser)
+Method: doSomething(int x, int y)
+TestFile: Test.java
+Inputs:
+Name 23 True
+Name 33 False
+Outputs:
+Success
+Failure
+
+# This is the format we are going to be basing our cases off of. 
