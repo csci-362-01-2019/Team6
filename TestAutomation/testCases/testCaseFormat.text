@@ -1,13 +1,9 @@
 Test ID: Test
 Requirement: To Do Something
 Component: Test Component (ie Drug Dispenser)
-Method: doSomething(int x, int y)
-TestFile: Test.java
-Inputs:
-Name 23 True
-Name 33 False
-Outputs:
-Success
-Failure
+Method: doSomething(Argument 1, Argument 2, etc)
+TestFile: The file being tested
+Inputs: All inputs being tested, seperated by semicolons
+Expected Outputs: All expected outputs, seperated by semicolons
 
 # This is the format we are going to be basing our cases off of. 
