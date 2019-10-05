@@ -1,65 +1,112 @@
 #!/bin/bash
 
-# compile by: chmod +x runAllTests.sh
-# run: ./runAllTests.sh
+#compile/execute instructions
+## chmod +x runAllTests.sh
+## ./runAllTests.sh
 
-# variables
-TestID="" #ie. DrugObjectTest
-Requirement=""  # ie. does something
-Component="" # ie. Drug Organizer
-Method="" # ie. labelDrug()
-TestFile="" # ie. Drug.java
-Inputs="" # ie. Benadryl 20 9/14/23
-Outputs="" # ie. Safe
-Oracle="" # compare with Outputs
-FileName="" # File to search for info.
+#input variables
+TestID=""
+Requirement=""
+Component=""
+Method=""
+TestFile=""
+Inputs=""
 
-# create array of test file names
-cd .. 
+#helper variables
+JavaFile=""
+OutputFile=""
+Oracle=""
+TestStatus=""
+
+#counter variable
+declare -i x=1
+
+#compile OpenMRS dependencies
+#TODO: pom script
+
+#go to test file directory
+cd ..
 cd "testCases"
-testfiles=$( ls * )
 
-# loop through test files
-for i in "${testfiles[@]}" do # I keep getting an unexpected token
-        #get file name
-        FileName="$i"
+#take in file
+InputFile="testCase1.txt" #TODO: Loop through all test cases
 
-        #retrieve TestID
-        TestID="$(grep 'Test ID:' $i)"
+#read file
+while IFS= read -r line
+do
+	#case statement to take file input
+	case $x in
+		#take in TestID
+		1)
+			TestID="$line"
+			;;
+		2)
+			Requirement="$line"
+			;;
+		3)
+			Component="$line"
+			;;
+		4)
+			Method="$line"
+			;;
+		5)
+			TestFile="$line"
+			;;
+		6)
+			Inputs="$line"
+			;;
+		*)
+			echo "Error"
+			;;
+	esac
 
-        #retrieve Requirement
+	#iterate counter variable
+	let x=$x+1
 
-        #retrieve Component
+done < "$InputFile"
 
-        #retrieve Method
+#!echo test
+echo "Input File Read:"
+echo $TestID
+echo $Requirement
+echo $Component
+echo $Method
+echo $TestFile
+echo $Inputs
 
-        #grab all inputs
-        #TODO: This will need to be done with IFS=read -r $line or grep
+#format needed files
+JavaFile="${TestFile}.java"
+OutputFile="${TestID}results.txt"
+Oracle="${TestID}Oracle.txt"
 
-        #grab all outputs
+#go to executable directory
+cd ..
+cd "testCasesExecutables"
 
-        #compile testing executable (ie Java driver)
-        cd..
-        cd "testCasesExecutables"
-        javac $TestFile
-        # java (format to run the object)
-        
-        # execute Java file w/ command line arguments
-        ##java testfile.class
-        
-        # retrieve output from folder
-        cd ..
-        cd "temp"
-        ##read from output file and compare to 
-        
-        # compare output with oracle
-        cd ..
-        cd "oracles"
-        ##read from oracle file
-        ##compare and write something to the reports
-        
-        # write a report
-        cd .. 
-        cd "reports"
-        ##write a report
-done
+#compile and execute
+javac $JavaFile
+java $TestFile $Inputs
+
+#go to home directory
+cd ..
+
+#compare output to oracle
+if cmp -s "temp/${OutputFile}" "oracles/${Oracle}"; then
+	TestStatus="Success"
+else
+	TestStatus="Failure"
+fi
+echo $TestStatus
+
+#go to report directory
+cd "reports"
+
+#create/write to report
+echo "${TestID} Result: ${TestStatus}" >> "testReport.txt"
+
+#TODO:
+## Iterate through multiple files
+## Compile needed OpenMRS packages
+## clear temp folder before run
+## remove or rename old report file before another run
+## {Driver File} write to temp
