@@ -2,7 +2,7 @@
 Test01
 Method must return a float between 0.0 and 1.0
 ### component ###
-getPercentage()
+getPercentage(int1)
 ### filename ###
 integer
 float
