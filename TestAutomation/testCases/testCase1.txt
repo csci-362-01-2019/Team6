@@ -4,5 +4,5 @@ Method must return a float between 0.0 and 1.0
 ### component ###
 getPercentage()
 ### filename ###
-###input1;input2;input3;...###
-###output1;output2;output3...###
+integer
+float
