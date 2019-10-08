@@ -1,8 +1,8 @@
 ### Dummy file ###
-Test01
-Method must return a string without any quotes
-### component ###
-escapeQuotes
-### filename ###
-string
-string
+1:Test01
+2:Method must return a string without any quotes
+3:### component ###
+4:escapeQuotes
+5:### filename ###
+6:string
+7:string
