@@ -1,0 +1,6 @@
+testCase0
+Testing Addition
+Addition Class
+adder()
+Echo
+10 20
