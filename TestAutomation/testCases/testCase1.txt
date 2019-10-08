@@ -1,6 +1,6 @@
 ### Dummy file ###
 Test01
-Method must return a float between 0.0 and 1.0
+Method must return a string without any quotes
 ### component ###
 escapeQuotes
 ### filename ###
