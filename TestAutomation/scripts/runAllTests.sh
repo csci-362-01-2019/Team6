@@ -29,7 +29,7 @@ cd ..
 cd "testCases"
 
 #take in file
-InputFile="testCase1.txt" #TODO: Loop through all test cases
+InputFile="testCase0.txt" #TODO: Loop through all test cases
 
 #read file
 while IFS= read -r line
