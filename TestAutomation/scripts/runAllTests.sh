@@ -80,6 +80,9 @@ for i in $caseFiles ; do
 
 	done < "$i"
 
+	#reset counter variable
+	let x=1
+
 	#!echo test
 	echo "Input File Read:"
 	echo $TestID
