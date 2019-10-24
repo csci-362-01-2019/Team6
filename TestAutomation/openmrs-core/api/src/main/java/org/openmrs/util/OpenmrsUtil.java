@@ -46,7 +46,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
@@ -2196,16 +2195,6 @@ public class OpenmrsUtil {
 	 */
 	public static Set<String> getDeclaredFields(Class<?> clazz) {
 		return Arrays.stream(clazz.getDeclaredFields()).map(Field::getName).collect(Collectors.toSet());
-	}
-	
-	public static void main(String[] args) {
-		System.out.println("SHIT");
-		OpenmrsUtil openmrs = new OpenmrsUtil();
-		if (Objects.equals(args[1], "containsUpperAndLowerCase")) {
-			boolean b = openmrs.containsUpperAndLowerCase(args[1]);
-			System.out.println(String.valueOf(b).equals(args[2]));
-		}
-		
 	}
 	
 }
