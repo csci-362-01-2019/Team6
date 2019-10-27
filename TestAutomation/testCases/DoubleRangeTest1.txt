@@ -1,0 +1,6 @@
+DoubleRangeTest1
+Testing Range Function for within bounds
+OpenMRS Util Component
+contains()
+DoubleRangeTest
+1000.02 9999.1 3000

@@ -1,0 +1,6 @@
+DoubleRangeTest4
+Testing Range Function for inclusive lower bound
+OpenMRS Util Component
+contains()
+DoubleRangeTest
+1000.02 9999.1 1000.2
