@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #compile/execute instructions
-## chmod +x runAllTests.sh
+## chmod u+x runAllTests.sh
 ## ./runAllTests.sh
 
 #input variables
@@ -14,8 +14,10 @@ TestFile=""
 Inputs=""
 
 #helper variables
-JavaFile=""
+#JavaFile="" (MODIFIED for running in openmrs-core)
+ExecuteFile="" # temp variable for executing
 OutputFile=""
+Output=""
 Oracle=""
 TestStatus=""
 
@@ -23,10 +25,13 @@ TestStatus=""
 declare -i x=1
 
 #compile OpenMRS dependencies
-#TODO: pom script
+cd ..
+cd openmrs-core/api
+mvn clean
+mvn compile
 
 #remove temp files
-cd ..
+cd ../..
 rm -rf temp
 mkdir temp
 
@@ -38,6 +43,9 @@ echo "Test Report" > "testReport.html"
 #go to test file directory
 cd ..
 cd "testCases"
+
+# echo test start
+echo "TEST BEGIN"
 
 #loop through all files
 caseFiles=$( ls * )
@@ -84,7 +92,8 @@ for i in $caseFiles ; do
 	let x=1
 
 	#!echo test
-	echo "Input File Read:"
+	echo "==========================="
+	echo "Test Being Run:"
 	echo $TestID
 	echo $Requirement
 	echo $Component
@@ -92,20 +101,29 @@ for i in $caseFiles ; do
 	echo $TestFile
 	echo $Inputs
 
-	#format needed files
-	JavaFile="${TestFile}.java"
+	#format needed files (MODIFID: for run from openmrs targe)
+	#JavaFile="${TestFile}.java"
+	ExecuteFile="org.openmrs.util.${TestFile}"
 	OutputFile="${TestID}results.txt"
 	Oracle="${TestID}Oracle.txt"
 
 	#go to executable directory
-	cd ..
-	cd "testCaseExecutables"
+	#cd ..
+	#cd "testCaseExecutables"
 
 	#compile and execute
-	javac $JavaFile
-	java $TestFile $Inputs
+	#javac $JavaFile
+	#java $TestFile $Inputs
 
-	#go to home directory
+	## For executing in openmrs-core/api directory
+	cd ..
+	cd openmrs-core/api
+	Output="$(java -cp target/classes $ExecuteFile $Inputs)"
+
+	#go to home directory and write output file
+	cd ../..
+	cd temp
+	echo "${Output}" > "${OutputFile}"
 	cd ..
 
 	#compare output to oracle
@@ -115,17 +133,21 @@ for i in $caseFiles ; do
 		TestStatus="Failure"
 	fi
 	echo $TestStatus
+	echo "==========================="
 
 	#go to report directory
 	cd "reports"
 
 	#create/write to report
-	echo "${TestID} Result: ${TestStatus}" >> "testReport.txt"
+	echo "${TestID} Result: ${TestStatus}" >> "testReport.html"
 
 	# return to test case directory for next test
 	cd ..
 	cd "testCases"
 done
+
+# echo test end
+echo "TEST COMPLETE"
 
 ## TODO: display html report to browser
 
