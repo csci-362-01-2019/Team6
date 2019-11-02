@@ -2,7 +2,10 @@
 
 #compile/execute instructions
 ## chmod u+x runAllTests.sh
-## ./runAllTests.sh
+## ./scripts/runAllTests.sh
+
+#to make runnable from the Test Automation Dir
+cd scripts
 
 #input variables
 InputFile=""
