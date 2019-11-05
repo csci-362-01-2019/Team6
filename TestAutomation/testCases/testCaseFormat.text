@@ -1,9 +1,0 @@
-1:Test ID- Test
-2:Requirement- To Do Something
-3:Component- Test Component (ie Drug Dispenser)
-4:Method- doSomething(Argument 1, Argument 2, etc)
-5:TestFile- The file being tested
-6:Inputs- All inputs being tested, seperated by semicolons
-7:Expected Outputs- All expected outputs, seperated by semicolons
-
-# This is the format we are going to be basing our cases off of. 

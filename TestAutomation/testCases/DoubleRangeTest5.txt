@@ -1,0 +1,6 @@
+DoubleRangeTest5
+Testing Range Function for inclusive lower bound with zeros
+OpenMRS Util Component
+contains()
+DoubleRangeTest
+0 175.63 0

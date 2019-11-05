@@ -27,8 +27,8 @@ declare -i x=1
 #compile OpenMRS dependencies
 cd ..
 cd openmrs-core/api
-mvn clean
-mvn compile
+#mvn clean
+#mvn compile
 
 #remove temp files
 cd ../..
