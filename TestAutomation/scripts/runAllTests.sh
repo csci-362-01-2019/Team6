@@ -4,6 +4,9 @@
 ## chmod u+x runAllTests.sh
 ## ./runAllTests.sh
 
+#Enables script to be run from TestAutomation dir
+cd scripts
+
 #input variables
 InputFile=""
 TestID=""
@@ -27,8 +30,10 @@ declare -i x=1
 #compile OpenMRS dependencies
 cd ..
 cd openmrs-core/api
+
 #mvn clean
 #mvn compile
+=======
 
 #remove temp files
 cd ../..
@@ -36,9 +41,9 @@ rm -rf temp
 mkdir temp
 
 #begin report
-#TODO: go to report directory and begin
-cd "reports"
-echo "Test Report" > "testReport.html"
+ReportFile="testReport.html"
+cd scripts
+./reportFormat.sh
 
 #go to test file directory
 cd ..
@@ -139,17 +144,32 @@ for i in $caseFiles ; do
 	cd "reports"
 
 	#create/write to report
-	echo "${TestID} Result: ${TestStatus}" >> "testReport.html"
+	{
+	echo "  <tr>"
+	echo "    <th>${TestID}</th>"
+	echo "    <th>${Inputs}</th>"
+	echo "    <th>${Output}</th>"
+	echo "    <th>Oracle</th>"
+	echo "    <th>${TestStatus}</th>"
+	echo "  </tr>"
+	} >> "${ReportFile}"
 
 	# return to test case directory for next test
 	cd ..
 	cd "testCases"
 done
 
-# echo test end
+#echo test end
 echo "TEST COMPLETE"
 
-## TODO: display html report to browser
+#finalize report
+cd ../reports
+{
+echo "</table>"
+echo "</body>"
+echo "</html>"
+} >> "${ReportFile}"
+FileCall="file://`pwd`/${ReportFile}"
 
-#TODO:
-## {Driver File} write to temp
+#call report to browser
+xdg-open $FileCall
