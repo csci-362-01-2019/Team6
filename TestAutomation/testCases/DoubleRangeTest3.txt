@@ -1,5 +1,5 @@
 DoubleRangeTest3
-Testing Range Function for exclusive  upperbound
+Testing Range Function for exclusive upper bound
 OpenMRS Util Component
 contains()
 DoubleRangeTest

@@ -1,8 +1,0 @@
-### Dummy file ###
-1:Test01
-2:Method must return a string without any quotes
-3:### component ###
-4:escapeQuotes(String s)
-5:### filename ###
-6:String
-7:String
