@@ -36,13 +36,26 @@ Returns false because 9999.2 isn't in the range it's .1 greater
 ##D4 - Test case outside the same program structure#
 
 If we are in the Team6/TestAutomation folder and we've created a folder testCaseExecutables/
-and furthermore we want to put our program in it's own package such  edu/cofc the program will 
-need to state this in the very first line of code as per java rules: package edu.cofc
+We can create test drivers here by following the same package rules as the classes we intend
+to test.  In this case:   
 
-Also, we will need the correct import statement right after: import org.openmrs.util.DoubleRange;
+package org.openmrs.util.DoubleRange
 
-$ javac -cp openmrs-core/api/target/classes testCaseExecutables/edu/cofc/DoubleRangeTest.java
+It's good to note that depending on our package java will put the class file into that same 
+structure following a 
 
-Will work from Team6/TestAutomation, and to execute
+$ javac -d [../classes/]
 
-$ 
+We also need the correct import statement right after the package statment in our code so: 
+
+import org.openmrs.util.DoubleRange;
+
+Now to compile, cd to the testCaseExecutables/
+
+$ cd testCaseExecutables
+$ javac -cp ../openmrs-core/api/target/classes -d ../openmrs-core/api/target/classes/ DoubleRangeTest.java
+
+The class file has been placed in the correct location, now to execute:
+
+$ java -cp ../openmrs-core/api/target/classes/ org.openmrs.util.DoubleRangeTest 1 2 3
+
