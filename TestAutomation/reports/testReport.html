@@ -1,6 +1,68 @@
-Test Report
-DoubleRangeTest1 Result: Success
-DoubleRangeTest2 Result: Success
-DoubleRangeTest3 Result: Success
-DoubleRangeTest4 Result: Success
-DoubleRangeTest5 Result: Success
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td{
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+<h2>OpenMRS Test Report</h2>
+<table style=width:100%>
+  <tr>
+    <th>Test Name</th>
+    <th>Inputs</th>
+    <th>Output</th>
+    <th>Oracle</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <th>DoubleRangeTest1</th>
+    <th>1000.02 9999.1 3000</th>
+    <th>true</th>
+    <th>Oracle</th>
+    <th>Success</th>
+  </tr>
+  <tr>
+    <th>DoubleRangeTest2</th>
+    <th>1000.02 9999.1 9999.2</th>
+    <th>false</th>
+    <th>Oracle</th>
+    <th>Success</th>
+  </tr>
+  <tr>
+    <th>DoubleRangeTest3</th>
+    <th>1000.02 9999.1 9999.1</th>
+    <th>false</th>
+    <th>Oracle</th>
+    <th>Success</th>
+  </tr>
+  <tr>
+    <th>DoubleRangeTest4</th>
+    <th>1000.2597 9999.1 1000.259001</th>
+    <th>false</th>
+    <th>Oracle</th>
+    <th>Success</th>
+  </tr>
+  <tr>
+    <th>DoubleRangeTest5</th>
+    <th>0 175.63 0</th>
+    <th>true</th>
+    <th>Oracle</th>
+    <th>Success</th>
+  </tr>
+  <tr>
+    <th>1:Test ID- Test</th>
+    <th>6:Inputs- All inputs being tested, seperated by semicolons</th>
+    <th></th>
+    <th>Oracle</th>
+    <th>Failure</th>
+  </tr>
+</table>
+</body>
+</html>

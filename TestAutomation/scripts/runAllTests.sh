@@ -1,8 +1,11 @@
 #!/bin/bash
 
 #compile/execute instructions
-## chmod u+x runAllTests.sh
-## ./runAllTests.sh
+cd scripts
+chmod u+x runAllTests.sh
+chmod u+x reportFormat.sh 
+cd ..
+./runAllTests.sh
 
 #Enables script to be run from TestAutomation dir
 cd scripts
