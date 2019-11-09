@@ -3,4 +3,5 @@ Testing Range Function for within bounds
 OpenMRS Util Component
 contains()
 DoubleRangeTest
+org.openmrs.util.DoubleRangeTest
 1000.02 9999.1 3000
