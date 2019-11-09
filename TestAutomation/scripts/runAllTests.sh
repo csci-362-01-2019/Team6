@@ -1,8 +1,11 @@
 #!/bin/bash
 
 #compile/execute instructions
-## chmod u+x runAllTests.sh
-## ./runAllTests.sh
+cd scripts
+chmod u+x runAllTests.sh
+chmod u+x reportFormat.sh 
+cd ..
+./runAllTests.sh
 
 #Enables script to be run from TestAutomation dir
 cd scripts
@@ -14,13 +17,14 @@ Requirement=""
 Component=""
 Method=""
 TestFile=""
+Location=""
 Inputs=""
 
 #helper variables
-#JavaFile="" (MODIFIED for running in openmrs-core)
-ExecuteFile="" # temp variable for executing
+JavaFile="" # (MODIFIED for running in openmrs-core)
 OutputFile=""
 Output=""
+OracleFile=""
 Oracle=""
 TestStatus=""
 
@@ -30,8 +34,9 @@ declare -i x=1
 #compile OpenMRS dependencies
 cd ..
 cd openmrs-core/api
-##mvn clean
-##mvn compile
+
+#mvn clean
+#mvn compile
 
 #remove temp files
 cd ../..
@@ -79,6 +84,9 @@ for i in $caseFiles ; do
 				TestFile="$line"
 				;;
 			6)
+				Location="$line"
+				;;
+			7)
 				Inputs="$line"
 				;;
 			*)
@@ -102,35 +110,28 @@ for i in $caseFiles ; do
 	echo $Component
 	echo $Method
 	echo $TestFile
+	echo $Location
 	echo $Inputs
 
 	#format needed files (MODIFID: for run from openmrs targe)
-	#JavaFile="${TestFile}.java"
-	ExecuteFile="org.openmrs.util.${TestFile}"
+	JavaFile="${TestFile}.java"
 	OutputFile="${TestID}results.txt"
-	Oracle="${TestID}Oracle.txt"
+	OracleFile="${TestID}Oracle.txt"
 
 	#go to executable directory
-	#cd ..
-	#cd "testCaseExecutables"
+	cd ../testCaseExecutables
 
-	#compile and execute
-	#javac $JavaFile
-	#java $TestFile $Inputs
-
-	## For executing in openmrs-core/api directory
-	cd ..
-	cd openmrs-core/api
-	Output="$(java -cp target/classes $ExecuteFile $Inputs)"
+	#compile, execute, and retreive output
+	javac -cp ../openmrs-core/api/target/classes -d ../openmrs-core/api/target/classes/ ${JavaFile}
+	Output="$(java -cp ../openmrs-core/api/target/classes/ $Location $Inputs)"
 
 	#go to home directory and write output file
-	cd ../..
-	cd temp
+	cd ../temp
 	echo "${Output}" > "${OutputFile}"
 	cd ..
 
 	#compare output to oracle
-	if cmp -s "temp/${OutputFile}" "oracles/${Oracle}"; then
+	if cmp -s "temp/${OutputFile}" "oracles/${OracleFile}"; then
 		TestStatus="Success"
 	else
 		TestStatus="Failure"
@@ -138,16 +139,23 @@ for i in $caseFiles ; do
 	echo $TestStatus
 	echo "==========================="
 
+	#retreive oracle data
+	cd oracles
+	Oracle=$(<$OracleFile)
+
 	#go to report directory
-	cd "reports"
+	cd ../reports
 
 	#create/write to report
 	{
 	echo "  <tr>"
 	echo "    <th>${TestID}</th>"
+	echo "    <th>${Component}</th>"
+	echo "    <th>${Requirement}</th>"
+	echo "    <th>${Method}</th>"
 	echo "    <th>${Inputs}</th>"
 	echo "    <th>${Output}</th>"
-	echo "    <th>Oracle</th>"
+	echo "    <th>${Oracle}</th>"
 	echo "    <th>${TestStatus}</th>"
 	echo "  </tr>"
 	} >> "${ReportFile}"
