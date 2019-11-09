@@ -1,11 +1,8 @@
 #!/bin/bash
 
 #compile/execute instructions
-cd scripts
-chmod u+x runAllTests.sh
-chmod u+x reportFormat.sh 
-cd ..
-./runAllTests.sh
+## chmod u+x runAllTests.sh
+## ./runAllTests.sh
 
 #Enables script to be run from TestAutomation dir
 cd scripts
@@ -33,10 +30,8 @@ declare -i x=1
 #compile OpenMRS dependencies
 cd ..
 cd openmrs-core/api
-
-#mvn clean
-#mvn compile
-=======
+##mvn clean
+##mvn compile
 
 #remove temp files
 cd ../..
