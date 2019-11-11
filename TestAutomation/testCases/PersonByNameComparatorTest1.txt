@@ -1,7 +1,0 @@
-PersonByNameComparatorTest1
-Testing Name Comparator Function
-OpenMRS Util Component
-compare(String person1, String person2)
-PersonByNameComparatorTest
-org.openmrs.util.PersonByNameComparator
-George Sam Patton Thomas Adams Jefferson
