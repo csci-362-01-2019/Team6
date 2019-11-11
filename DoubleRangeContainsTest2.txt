@@ -1,7 +1,0 @@
-DoubleRangeTest2
-Testing Range Function for exclusive upperbound
-OpenMRS Util Component
-contains()
-DoubleRangeTest
-org.openmrs.util.DoubleRangeTest
-1000.02 9999.1 9999.2
