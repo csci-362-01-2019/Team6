@@ -90,7 +90,6 @@ for i in $caseFiles ; do
 				Inputs="$line"
 				;;
 			*)
-				echo "Error"
 				;;
 		esac
 
@@ -128,6 +127,7 @@ for i in $caseFiles ; do
 	#go to home directory and write output file
 	cd ../temp
 	echo "${Output}" > "${OutputFile}"
+	echo "${Output}"
 	cd ..
 
 	#compare output to oracle
