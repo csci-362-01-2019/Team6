@@ -1,0 +1,31 @@
+package org.openmrs.util;
+
+import org.openmrs.util.DoubleRange;
+
+public class DoubleRangeCompareTest {
+	
+	/**
+	 * first sorts according to low-bound (ascending) then according to high-bound (descending)
+	 * @should return plus 1 if this low is greater than other low
+	 * @should return minus one if this low is lower than other low
+	 * @should return plus one if both lows are equal but other high is greater than this high
+	 * @should return minus one if both lows are equal but other high is less than this high
+	 * @should return zero if both lows and both highs are equal
+	 * @should return 1 if this range is wider than other range
+	 **/
+	public static void main(String[] args) {
+		Double d1 = Double.parseDouble(args[0]);
+		Double d2 = Double.parseDouble(args[1]);
+		
+		DoubleRange dr1 = new DoubleRange(d1, d2);
+		
+		Double d3 = Double.parseDouble(args[2]);
+		Double d4 = Double.parseDouble(args[3]);
+		
+		DoubleRange dr2 = new DoubleRange(d3, d4);
+		
+		Integer int1 = Integer.parseInt(args[4]);
+		
+		System.out.println(int1.equals(dr1.compareTo(dr2)));
+	}
+}
