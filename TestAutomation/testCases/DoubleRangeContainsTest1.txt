@@ -1,7 +1,7 @@
-DoubleRangeTest1
+DoubleRangeContainsTest1
 Testing Range Function for within bounds
 OpenMRS Util Component
 contains()
-DoubleRangeTest
-org.openmrs.util.DoubleRangeTest
+DoubleRangeContainsTest
+org.openmrs.util.DoubleRangeContainsTest
 1000.02 9999.1 3000
