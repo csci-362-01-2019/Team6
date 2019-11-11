@@ -24,8 +24,6 @@ public class DoubleRangeCompareTest {
 		
 		DoubleRange dr2 = new DoubleRange(d3, d4);
 		
-		Integer int1 = Integer.parseInt(args[4]);
-		
-		System.out.println(int1.equals(dr1.compareTo(dr2)));
+		System.out.println(dr1.compareTo(dr2));
 	}
 }
