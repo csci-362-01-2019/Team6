@@ -1,0 +1,7 @@
+ResultContainsTest2
+Testing the contains() method in the Results class using non-increasing ordering
+OpenMRS Logic Result Component
+contains()
+ResultContainsTest
+org.openmrs.logic.result.ResultContainsTest
+1.65 0.49 3.53 3.53

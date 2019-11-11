@@ -1,0 +1,7 @@
+ResultContainsTest4
+Testing the contains() method in the Results class using multiple acceptable values
+OpenMRS Logic Result Component
+contains()
+ResultContainsTest
+org.openmrs.logic.result.ResultContainsTest
+6.65 9.92 6.65 6.65
