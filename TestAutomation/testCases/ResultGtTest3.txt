@@ -1,0 +1,7 @@
+ResultGtTest3
+Testing the Greater Than method in the Results class with an insufficient value
+OpenMRS Logic Result Component
+gt()
+ResultGtTest
+org.openmrs.logic.result.ResultGtTest
+200 300

@@ -1,0 +1,7 @@
+ResultGtTest4
+Testing the Greater Than method in the Results class with two negative values
+OpenMRS Logic Result Component
+gt()
+ResultGtTest
+org.openmrs.logic.result.ResultGtTest
+-100 -150
