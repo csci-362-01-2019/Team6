@@ -132,7 +132,7 @@ for i in $caseFiles ; do
 
 	#compare output to oracle
 	if cmp -s "temp/${OutputFile}" "oracles/${OracleFile}"; then
-		TestStatus="Success"
+		TestStatus="Pass"
 	else
 		TestStatus="Failure"
 	fi
