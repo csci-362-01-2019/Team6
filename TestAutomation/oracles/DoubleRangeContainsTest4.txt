@@ -1,0 +1,7 @@
+DoubleRangeContainsTest4
+Testing Range Function for exclusive lower bound
+OpenMRS Util Component
+contains()
+DoubleRangeContainsTest
+org.openmrs.util.DoubleRangeContainsTest
+1000.2597 9999.1 1000.259001

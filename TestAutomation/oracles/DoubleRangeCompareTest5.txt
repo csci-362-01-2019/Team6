@@ -1,0 +1,8 @@
+DoubleRangeCompareTest5
+Testing the compare() function with two different lower bounds
+OpenMRS Util Component
+compare()
+DoubleRangeCompareTest
+org.openmrs.util.DoubleRangeCompareTest
+10 30 10 20
+
