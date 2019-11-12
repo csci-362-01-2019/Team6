@@ -1,8 +1,0 @@
-DoubleRangeCompareTest8
-Testing the compare() function with two different ranges with negative bounds
-OpenMRS Util Component
-compare()
-DoubleRangeCompareTest
-org.openmrs.util.DoubleRangeCompareTest
--20 0 10 40
-
