@@ -1,0 +1,7 @@
+test10
+Return true if the result is equal to the given result or is a list containing a member equal to the given result
+OpenMRS Result Component
+boolean contains(Result result)
+ResultContainsTest
+org.openmrs.logic.result.ResultContainsTest
+12.1 -4.64 34.12 -4.64
