@@ -56,9 +56,7 @@ cd "testCases"
 echo "TEST BEGIN"
 
 #loop through all files
-caseFiles=$( ls * )
-for i in $caseFiles ; do
-
+for i in test{1..25}.txt; do
 	#take in file
 	InputFile="$i"
 
@@ -120,7 +118,7 @@ for i in $caseFiles ; do
 	#go to executable directory
 	cd ../testCaseExecutables
 
-	#compile, execute, and retreive output
+	#compile, execute, and retrieve output
 	javac -cp ../openmrs-core/api/target/classes -d ../openmrs-core/api/target/classes/ ${JavaFile}
 	Output="$(java -cp ../openmrs-core/api/target/classes/ $Location $Inputs)"
 
@@ -139,7 +137,7 @@ for i in $caseFiles ; do
 	echo $TestStatus
 	echo "==========================="
 
-	#retreive oracle data
+	#retrieve oracle data
 	cd oracles
 	Oracle=$(<$OracleFile)
 
