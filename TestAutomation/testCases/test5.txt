@@ -1,7 +1,8 @@
-test1
+test5
 The Greater Than method will return all results greater than the given value
 OpenMRS Result Component
 public Result gt(Integer value)
 ResultGtTest
 org.openmrs.logic.result.ResultGtTest
-200 100
+200 200
+
