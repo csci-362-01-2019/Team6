@@ -1,0 +1,7 @@
+test1
+If the second argument is greater than the first argument output the first argument otherwise output "empty"
+OpenMRS Result Component
+gt() 
+ResultGtTest
+org.openmrs.logic.result.ResultGtTest
+200 100
