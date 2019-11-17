@@ -16,7 +16,7 @@ public class ResultGtTest {
 		Integer int1 = Integer.parseInt(args[1]);
 		
 		if (rgt.gt(int1) instanceof EmptyResult)
-			System.out.println("null");
+			System.out.println("empty");
 		else 
 			System.out.println(rgt.gt(int1));
 	}
