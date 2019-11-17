@@ -5,7 +5,6 @@ cd scripts
 chmod u+x runAllTests.sh
 chmod u+x reportFormat.sh 
 cd ..
-./runAllTests.sh
 
 #Enables script to be run from TestAutomation dir
 cd scripts
@@ -34,9 +33,6 @@ declare -i x=1
 #compile OpenMRS dependencies
 cd ..
 cd openmrs-core/api
-
-#mvn clean
-#mvn compile
 
 #remove temp files
 cd ../..
@@ -101,14 +97,7 @@ for i in test{1..25}.txt; do
 
 	#!echo test
 	echo "==========================="
-	echo "Test Being Run:"
-	echo $TestID
-	echo $Requirement
-	echo $Component
-	echo $Method
-	echo $TestFile
-	echo $Location
-	echo $Inputs
+	echo "Test ${TestID} now being run"
 
 	#format needed files (MODIFID: for run from openmrs targe)
 	JavaFile="${TestFile}.java"
@@ -125,7 +114,6 @@ for i in test{1..25}.txt; do
 	#go to home directory and write output file
 	cd ../temp
 	echo "${Output}" > "${OutputFile}"
-	echo "${Output}"
 	cd ..
 
 	#compare output to oracle
@@ -134,8 +122,8 @@ for i in test{1..25}.txt; do
 	else
 		TestStatus="Failure"
 	fi
-	echo $TestStatus
-	echo "==========================="
+	echo "Test Complete"
+	echo "Test ${TestID} status: ${TestStatus}"
 
 	#retrieve oracle data
 	cd oracles
@@ -147,14 +135,14 @@ for i in test{1..25}.txt; do
 	#create/write to report
 	{
 	echo "  <tr>"
-	echo "    <th>${TestID}</th>"
-	echo "    <th>${Component}</th>"
-	echo "    <th>${Requirement}</th>"
-	echo "    <th>${Method}</th>"
-	echo "    <th>${Inputs}</th>"
-	echo "    <th>${Output}</th>"
-	echo "    <th>${Oracle}</th>"
-	echo "    <th>${TestStatus}</th>"
+	echo "    <td style=\"font-size:1.0vw; text-decoration:underline\">${TestID}</th>"
+	echo "    <td style=\"font-size:0.8vw\">${Component}</th>"
+	echo "    <td style=\"font-size:0.8vw; width:400px\">${Requirement}</th>"
+	echo "    <td style=\"font-size:0.8vw; overflow: hidden;text-overflow:ellipsis;white-space:nowrap\">${Method}</th>"
+	echo "    <td style=\"font-size:0.9vw\">${Inputs}</th>"
+	echo "    <td style=\"font-size:0.8vw\">${Output}</th>"
+	echo "    <td style=\"font-size:0.8vw\">${Oracle}</th>"
+	echo "    <td style=\"font-size:0.8vw\">${TestStatus}</th>"
 	echo "  </tr>"
 	} >> "${ReportFile}"
 
@@ -164,7 +152,8 @@ for i in test{1..25}.txt; do
 done
 
 #echo test end
-echo "TEST COMPLETE"
+echo "==========================="
+echo "TESTING COMPLETE"
 
 #finalize report
 cd ../reports
