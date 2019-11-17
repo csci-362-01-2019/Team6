@@ -1,7 +1,0 @@
-ResultGtTest1
-Testing the Greater Than method in the Results class with standard values
-OpenMRS Logic Result Component
-gt()
-ResultGtTest
-org.openmrs.logic.result.ResultGtTest
-200 100
