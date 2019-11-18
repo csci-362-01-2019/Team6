@@ -5,4 +5,4 @@ Result gt(Integer value)
 ResultGtTest
 org.openmrs.logic.result.ResultGtTest
 200 200
-
+[200].gt(200)

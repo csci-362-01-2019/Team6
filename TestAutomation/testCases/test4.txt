@@ -5,3 +5,4 @@ Result gt(Integer value)
 ResultGtTest
 org.openmrs.logic.result.ResultGtTest
 -100 -150
+[-100].gt(-150)
