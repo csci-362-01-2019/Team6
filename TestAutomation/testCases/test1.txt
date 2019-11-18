@@ -1,5 +1,5 @@
 test1
-
+The greater than method will return all results greater than the given value
 org.openmrs.logic.result
 Result gt(Integer value)
 ResultGtTest
