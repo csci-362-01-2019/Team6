@@ -52,7 +52,7 @@ cd "testCases"
 echo "TEST BEGIN"
 
 #loop through all files
-for i in test{1..12}.txt; do
+for i in test{1..5}.txt; do
 	#take in file
 	InputFile="$i"
 
@@ -141,7 +141,7 @@ for i in test{1..12}.txt; do
 	echo "    <td style=\"font-size:1.0vw; text-decoration:underline\">${TestID}</th>"
 	echo "    <td style=\"font-size:1.1vw; width:400px\">${Requirement}</th>"
 	echo "    <td style=\"font-size:0.8vw\">${Component}</th>"
-	echo "    <td style=\"font-size:0.8vw; overflow: hidden;text-overflow:ellipsis;white-space:nowrap\">${Method}</th>"
+	echo "    <td style=\"font-size:1.0vw; overflow: hidden;text-overflow:ellipsis;white-space:nowrap\">${Method}</th>"
 	echo "    <td style=\"font-size:0.9vw\">${Inputs}</th>"
 	echo "    <td style=\"font-size:0.9vw\">${iDisplay}</th>"
 	echo "    <td style=\"font-size:0.9vw\">${Output}</th>"
