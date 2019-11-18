@@ -52,7 +52,7 @@ cd "testCases"
 echo "TEST BEGIN"
 
 #loop through all files
-for i in test{1..5}.txt; do
+for i in test{10..15}.txt; do
 	#take in file
 	InputFile="$i"
 
@@ -138,15 +138,15 @@ for i in test{1..5}.txt; do
 	#create/write to report
 	{
 	echo "  <tr>"
-	echo "    <td style=\"font-size:1.0vw; text-decoration:underline\">${TestID}</th>"
-	echo "    <td style=\"font-size:1.1vw; width:400px\">${Requirement}</th>"
+	echo "    <td style=\"font-size:1.0vw;\">${TestID}</th>"
+	echo "    <td style=\"font-size:1.1vw;width:400px\">${Requirement}</th>"
 	echo "    <td style=\"font-size:0.8vw\">${Component}</th>"
-	echo "    <td style=\"font-size:1.0vw; overflow: hidden;text-overflow:ellipsis;white-space:nowrap\">${Method}</th>"
-	echo "    <td style=\"font-size:0.9vw\">${Inputs}</th>"
-	echo "    <td style=\"font-size:0.9vw\">${iDisplay}</th>"
+	echo "    <td style=\"font-size:1.0vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\">${Method}</th>"
+#	echo "    <td style=\"font-size:0.9vw\">${Inputs}</th>"
+	echo "    <td style=\"font-size:1.1vw\">${iDisplay}</th>"
 	echo "    <td style=\"font-size:0.9vw\">${Output}</th>"
 	echo "    <td style=\"font-size:0.9vw\">${Oracle}</th>"
-	echo "    <td style=\"font-size:0.9vw\">${TestStatus}</th>"
+	echo "    <td style=\"font-weight:bold;font-size:1.0vw;color: red\">${TestStatus}</th>"
 	echo "  </tr>"
 	} >> "${ReportFile}"
 
