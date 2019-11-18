@@ -4,5 +4,5 @@ org.openmrs.util
 boolean contains(double d)
 DoubleRangeContainsTest
 org.openmrs.util.DoubleRangeContainsTest
-100.2 200.2 100.2001
-[[100.2,200.2]).contains(100.2001)
+-33.3 -1.0 -1.0
+[-33.3:-1.0).contains(-1.0)
