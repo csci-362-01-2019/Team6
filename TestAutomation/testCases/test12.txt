@@ -1,8 +1,8 @@
 test12
-Return true if double is in range and false otherwise, high end is exclusive, low end is inclusive
-OpenMRS Util Component
+Return true if double is in range and false otherwise, low end is inclusive, high end is exclusive
+org.openmrs.util
 boolean contains(double d)
 DoubleRangeContainsTest
 org.openmrs.util.DoubleRangeContainsTest
 100.02 99.1 99.2
-[100.02,99.1].contains(99.2)
+[[100.02,99.1]).contains(99.1)

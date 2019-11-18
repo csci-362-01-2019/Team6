@@ -1,7 +1,8 @@
-DoubleRangeContainsTest3
-Testing Range Function for exclusive upper bound
-OpenMRS Util Component
-contains()
+test13
+Return true if double is in range and false otherwise, low end is inclusive, high end is exclusive 
+org.openmrs.util
+boolean contains(double d)
 DoubleRangeContainsTest
 org.openmrs.util.DoubleRangeContainsTest
-1000.02 9999.1 9999.1
+99.1 100.2 99.1
+[[99.1,100.2]).contains(99.1)
