@@ -23,9 +23,9 @@ public class DoubleRange implements Comparable<DoubleRange> {
 	
 	private Double high;
 	
-	private boolean closedLow = true; //TODO: add setters and getters for these
+	private boolean closedLow = false; //TODO: add setters and getters for these
 	
-	private boolean closedHigh = false;
+	private boolean closedHigh = true;
 	
 	/**
 	 * @should return null low and high if accessors are not called
