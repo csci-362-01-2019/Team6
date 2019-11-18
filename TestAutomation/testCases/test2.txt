@@ -1,8 +1,8 @@
 test2
-The Greater Than method will return all results greater than the given value
-OpenMRS Result Component
+The greater than method will return all results greater than the given value
+org.openmrs.logic.result
 Result gt(Integer value)
 ResultGtTest
 org.openmrs.logic.result.ResultGtTest
-200 -100
-[200].gt(-100)
+-10 -5
+[-10].gt(-5)
