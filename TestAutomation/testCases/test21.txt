@@ -1,6 +1,5 @@
 test21
 Return 1 if this low > other low or both lows = but other high > this high; -1 if this low < other low or both lows = but other high < this high; 0 if equal
-Testing the compare() function with two identical ranges
 org.openmrs.util
 int compareTo(DoubleRange other)
 DoubleRangeCompareTest
