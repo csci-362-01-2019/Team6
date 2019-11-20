@@ -1,0 +1,9 @@
+test25
+Return 1 if this low > other low or both lows = but other high > this high; -1 if this low < other low or both lows = but other high < this high; 0 if equal
+Testing the compare() function with two identical ranges
+org.openmrs.util
+int compareTo(DoubleRange other)
+DoubleRangeCompareTest
+org.openmrs.util.DoubleRangeCompareTest
+10 50 5 20
+[10 : 50].compareTo([5 : 20])
