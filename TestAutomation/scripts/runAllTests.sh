@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#title: runAllScripts.sh
+#desc: This script is used to run all test cases available for OpenMRS and print a test report
+#authors: Alan Arsiniega, Cameron Reuschel, and Jacob Ballou
+#course: Software Engineering CS362
+#date: 2019-11-19
+#notes: To execute, run from the TestAutomation directory
+#usage: ./scripts/runAllTests.sh
+
+###############################################################################################
+
 #compile/execute instructions
 cd scripts
 chmod u+x runAllTests.sh
