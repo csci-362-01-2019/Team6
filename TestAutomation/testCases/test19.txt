@@ -4,5 +4,5 @@ org.openmrs.util
 boolean contains(double d)
 DoubleRangeContainsTest
 org.openmrs.util.DoubleRangeContainsTest
-34.45 45.78
+34.45 45.78 34.4501 
 [34.45 : 45.78).contains(34.4501)
