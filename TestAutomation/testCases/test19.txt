@@ -1,8 +1,8 @@
-test15
+test19
 Return true if double is in range and false otherwise, low end is inclusive, high end is exclusive
 org.openmrs.util
 boolean contains(double d)
 DoubleRangeContainsTest
 org.openmrs.util.DoubleRangeContainsTest
--1.0 0 0
-[-1.0 : 0).contains(0)
+34.45 45.78
+[34.45 : 45.78).contains(34.4501)

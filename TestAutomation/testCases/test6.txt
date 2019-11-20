@@ -5,4 +5,4 @@ boolean contains(Result result)
 ResultContainsTest
 org.openmrs.logic.result.ResultContainsTest
 2.1 3.2 4.3 2.1
-[2.1,3.2,4.3].contains(2.10)
+[2.1, 3.2, 4.3].contains(2.10)
