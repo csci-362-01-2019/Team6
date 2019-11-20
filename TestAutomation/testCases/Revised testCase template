@@ -3,6 +3,6 @@ Test requirement (written in a way that makes the purpose of the test clear)
 Test component
 Method being tested
 Test name (for easy reference by programmer)
-Test file
+Test file path
 Input(s), seperated by semicolons. Wrapper objects must be included if applicable. Objects with multiple parameters count as one input.
 Expected output(s), seperated by semicolons. Wrapper objects must be included if applicable. Objects with multiple parameters count as one output.
