@@ -1,3 +1,18 @@
+//title: ResultContainsTest.java
+//desc: This java driver tests the gt() method, gt meaning "greater than". It checks if a number is greater
+//than all values within the number array in the Result object 
+//--
+//authors: Alan Arsiniega, Cameron Reuschel, and Jacob Ballou
+//course: Software Engineering CS362
+//date: 2019-11-19
+//notes: Driver is moved and compiled inside of the OpenMRS-core directory;
+//warning: the result object appears to be bugged, and sometimes has issues with working with
+//multiple elements
+//--
+//usage: To be called by the runAllTests.sh script
+
+
+
 package org.openmrs.logic.result;
 
 import java.util.List;
