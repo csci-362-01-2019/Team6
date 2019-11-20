@@ -23,6 +23,7 @@ public class DoubleRangeCompareTest {
 	 * @should return zero if both lows and both highs are equal
 	 * @should return 1 if this range is wider than other range
 	 **/
+
 	public static void main(String[] args) {
 		Double d1 = Double.parseDouble(args[0]);
 		Double d2 = Double.parseDouble(args[1]);

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+###############################################################################################
+
 #title: runAllScripts.sh
 #desc: This script is used to run all test cases available for OpenMRS and print a test report
 #authors: Alan Arsiniega, Cameron Reuschel, and Jacob Ballou
@@ -62,7 +64,7 @@ cd "testCases"
 echo "TEST BEGIN"
 
 #loop through all files
-for i in test{10..15}.txt; do
+for i in test{1..25}.txt; do
 	#take in file
 	InputFile="$i"
 
