@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#title: reportFormat.sh
+#desc: This script is used to create and format an html file for the program test
+#authors: Alan Arsiniega, Cameron Reuschel, and Jacob Ballou
+#course: Software Engineering CS362
+#date: 2019-11-19
+#notes: Script is run automatically by runAllTests.sh
+#usage: ./reportFormat.sh
+
+##################################################################################
+
 ReportFile="testReport.html"
 
 #go to report directory
