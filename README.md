@@ -9,6 +9,41 @@ Pull down the repo to a linux/unix box:
 $ git clone https://github.com/csci-362-01-2019/Team6.git
 
 How to build with Maven:
-Go to: Team6/TestAutomation/openmrs-core/api
+$ cd Team6/TestAutomation/openmrs-core/api
 $ mvn clean
 $ mvn compile
+
+How to run all tests
+$ cd ../..
+$ ./scripts/runAllTests.sh
+
+How to inject faults:
+$ cd ../..
+$ vi openmrs-core/api/src/main/java/org/openmrs/util/DoubleRange.java
+
+Comment and the uncomment 2 boolean instance variables here:
+        
+        /**
+         *  FAULT INJECTION BELOW
+         */
+
+--->    private boolean closedLow = true; //TODO: add setters and getters for these
+        // To insert fault injection uncomment line below and comment line above!
+--->    //private boolean closedLow = false;
+
+--->    private boolean closedHigh = false;
+        // To insert fault injection uncomment line below and comment line above!
+--->    //private boolean closedHigh = true;
+
+        /**
+         *  FAULT INJECTION END
+         */
+
+Now we just need to build and run tests again:
+$ cd /openmrs-core/api
+$ mvn clean
+$ mvn compile
+$ cd ../..
+$ ./scripts/runAllTests.sh
+
+We should now see 5 tests fail!  Please let us know if there are any questions or concerns, thank you!
