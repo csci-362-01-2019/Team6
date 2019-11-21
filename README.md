@@ -22,22 +22,24 @@ $ cd ../..
 $ vi openmrs-core/api/src/main/java/org/openmrs/util/DoubleRange.java
 
 Comment and the uncomment 2 boolean instance variables here:
-        
+
+```java       
         /**
          *  FAULT INJECTION BELOW
          */
 
---->    private boolean closedLow = true; //TODO: add setters and getters for these
+        private boolean closedLow = true; //TODO: add setters and getters for these
         // To insert fault injection uncomment line below and comment line above!
---->    //private boolean closedLow = false;
+        //private boolean closedLow = false;
 
---->    private boolean closedHigh = false;
+        private boolean closedHigh = false;
         // To insert fault injection uncomment line below and comment line above!
---->    //private boolean closedHigh = true;
+       //private boolean closedHigh = true;
 
         /**
          *  FAULT INJECTION END
          */
+```
 
 Now we just need to build and run tests again:
 $ cd /openmrs-core/api
