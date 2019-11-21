@@ -23,9 +23,21 @@ public class DoubleRange implements Comparable<DoubleRange> {
 	
 	private Double high;
 	
+	/**
+	 *  FAULT INJECTION BELOW
+	 */
+	
 	private boolean closedLow = true; //TODO: add setters and getters for these
+	// To insert fault injection uncomment line below and comment line above!
+	//private boolean closedLow = false;
 	
 	private boolean closedHigh = false;
+	// To insert fault injection uncomment line below and comment line above!
+	//private boolean closedHigh = true;
+	
+	/**
+	 *  FAULT INJECTION END
+	 */
 	
 	/**
 	 * @should return null low and high if accessors are not called
